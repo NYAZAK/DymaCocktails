@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Cocktail } from './shared/cocktail';
+import { Cocktail } from './shared/cocktail.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,5 +7,5 @@ import { Cocktail } from './shared/cocktail';
 })
 export class AppComponent {
   title = 'cocktails';
-  cocktail = new Cocktail('mojito');
+  cocktail = new Cocktail('mojito', '', '');
 }
