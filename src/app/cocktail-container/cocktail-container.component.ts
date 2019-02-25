@@ -19,4 +19,7 @@ export class CocktailContainerComponent implements OnInit {
     this.cocktail = this.cocktails[0];
   }
 
+  showCocktail(index: number): void{
+    this.cocktail = this.cocktails[index];
+  }
 }
