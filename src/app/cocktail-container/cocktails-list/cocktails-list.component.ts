@@ -20,10 +20,5 @@ export class CocktailsListComponent implements OnInit {
     )
   }
 
-  pockCocktail(index: number): void{
-    this.activeCocktail = index;
-    this.cocktailS.selectCocktail(index);
-    console.log(this.activeCocktail);
-  }
 
 }
