@@ -8,6 +8,8 @@ import { CocktailsListComponent } from './cocktail-container/cocktails-list/cock
 import { CocktailDetailsComponent } from './cocktail-container/cocktail-details/cocktail-details.component';
 import { CocktailContainerComponent } from './cocktail-container/cocktail-container.component';
 import { ActiveCocktailDirective } from './shared/directives/active-cocktail.directive';
+import { PanierComponent } from './panier/panier.component';
+import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ActiveCocktailDirective } from './shared/directives/active-cocktail.dir
     CocktailsListComponent,
     CocktailDetailsComponent,
     CocktailContainerComponent,
-    ActiveCocktailDirective
+    ActiveCocktailDirective,
+    PanierComponent,
+    IngredientsListComponent
   ],
   imports: [
     BrowserModule,
