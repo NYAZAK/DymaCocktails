@@ -16,13 +16,9 @@ export class CocktailDetailsComponent implements OnInit {
   constructor(private activatedR: ActivatedRoute ,private cocktailS: CocktailService, private panierS: PanierService) { }
 
   ngOnInit() {
-    // this.cocktailS.cocktail.subscribe(
-    //   (cocktail: Cocktail) => {
-    //     this.cocktail = cocktail;
-    //   }
-    // )
-    this.activatedR.params.subscribe( (params: Params) => {
-      if(params) {
+    this.activatedR.params.subscribe( 
+      (params: Params) => {
+      if(params.index) {
         this.cocktail = this.cocktailS.getCocktail(params.index);
       } else {
         this.cocktail = this.cocktailS.getCocktail(0);
