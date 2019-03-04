@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CocktailService } from 'src/app/shared/services/service-cocktail.service';
 @Component({
   selector: 'app-cocktail-edit',
   templateUrl: './cocktail-edit.component.html',
@@ -11,24 +12,25 @@ export class CocktailEditComponent implements OnInit {
 
 
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private cocktailService: CocktailService) { }
 
   ngOnInit() {
     this.cocktailForm = this.fb.group({
       name: ['', Validators.required],
       img: ['', Validators.required],
-      desc: [''],
-      ingredient: this.fb.array([])
+      description: [''],
+      ingredients: this.fb.array([])
     });
   }
 
 
   createCocktail(){
-    console.log(this.cocktailForm);
+    console.log(this.cocktailForm.value);
+    this.cocktailService.addNewCocktail(this.cocktailForm.value);
   }
 
   moreIngredients(): void{
-   (<FormArray>this.cocktailForm.get('ingredient')).push(this.fb.group({
+   (<FormArray>this.cocktailForm.get('ingredients')).push(this.fb.group({
      name: [''],
      quantity: ['']
    }))
