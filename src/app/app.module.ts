@@ -18,6 +18,7 @@ import { CocktailContainerComponent } from './cocktail-container/cocktail-contai
 import { PanierComponent } from './panier/panier.component';
 import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
 import { CocktailEditComponent } from './cocktail-container/cocktail-edit/cocktail-edit.component';
+import { FilterPipe } from './shared/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CocktailEditComponent } from './cocktail-container/cocktail-edit/cockta
     ActiveCocktailDirective,
     PanierComponent,
     IngredientsListComponent,
-    CocktailEditComponent
+    CocktailEditComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
