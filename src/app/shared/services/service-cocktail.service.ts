@@ -55,4 +55,14 @@ export class CocktailService {
     });
     this.cocktails.next(cocktails);
   }
+
+  editCocktail(editcocktail: Cocktail): void{
+      const cocktails = this.cocktails.value.slice(); // copie par valeur pour ne pas modifier le tableau, au lieu prdocuit un faux tableau...
+      // on veut trouver l'index du cocktail qu'on veut modifier
+      // pour ensuite l'éditer on va utiliser la methode map puis indexof 
+      // comme on peut pas faire indexof d'un objet alors on fait un map sur nos elements avec leur nom 
+      const index = cocktails.map(c => c.name).indexOf(editcocktail.name);
+      cocktails[index] = editcocktail;
+      this.cocktails.next(cocktails);
+  }
 }
