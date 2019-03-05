@@ -13,9 +13,7 @@ export class FilterPipe implements PipeTransform {
 
     } else {
       console.log('retourne element cherché');
-      return cocktails.filter(
-        c =>  c.name.toLowerCase()
-        .includes(search.toLowerCase()) )
+      return cocktails.filter(c =>  c.name.toLowerCase().includes(search.toLowerCase()))
     }
   }
 
