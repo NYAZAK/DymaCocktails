@@ -14,14 +14,13 @@ import { ActiveCocktailDirective } from './shared/directives/active-cocktail.dir
 // components
 import { AppComponent } from './app.component';
 import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
-import { HeaderComponent } from './header/header.component';
+import { SharedModule } from './shared/module/shared.module';
 import { PanierComponent } from './panier/panier.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     ActiveCocktailDirective,
     PanierComponent,
     IngredientsListComponent,
@@ -33,7 +32,8 @@ import { PanierComponent } from './panier/panier.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CocktailModule
+    CocktailModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
