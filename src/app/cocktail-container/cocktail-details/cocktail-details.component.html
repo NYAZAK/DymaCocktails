@@ -1,0 +1,34 @@
+<div *ngIf="cocktail">
+<div class="row">
+  <div class="col-4">
+      <!-- src="{{cocktail.img}}"  -->
+  <img 
+  [src]='cocktail.img'
+  [alt]="cocktail.name" 
+  class="img-fluid" 
+  style="max-height: 150px"
+  >
+  </div>
+  <h3 class="col-8"> {{cocktail.name}} </h3> 
+</div>
+<hr>
+<div class="row">
+  <p class="col-12">{{cocktail.description}}</p>
+</div>
+<hr>
+<div class="row">
+  <ul class="list-group col-12">
+    <li *ngFor="let i of cocktail.ingredients" class="list-group-item list-group-item-light list-group-item-action text-dark font-weight-bold">
+      {{i.name}}: 
+      <span class="badge badge-info badge-pill float-right">{{i.quantity}}</span>
+    </li>
+  </ul>
+</div>
+<hr>
+<div class="row">
+  <button class="btn btn-success" [routerLink]="getUrl()">
+    Editer Cocktail
+  </button>
+  <button class="btn btn-secondary ml-auto" (click)="addIngredient(cocktail.ingredients)">Ajouter au panier</button>
+</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="list-group col-12" style="padding-right: 0px; margin-bottom: 10px">
+      <input type="text" class="form-control" placeholder="cherchez un cocktail..." [(ngModel)]="search" >
+      <hr>
+      
+    <a 
+          *ngFor="let cocktail of cocktails | filter:search; let index = index" 
+          [routerLink]="[index]"
+          routerLinkActive="active"
+          class="list-group-item list-group-item-action">{{cocktail.name}}
+    </a>
+          <!-- (click)="pockCocktail(index)"
+          [appActive]="index === activeCocktail" -->
+  </div>
+</div>
+<hr>
+<div class="row">
+  <button class="btn btn-success" [routerLink]='["new"]'>
+    Ajouter un Cocktail
+  </button>
+</div>

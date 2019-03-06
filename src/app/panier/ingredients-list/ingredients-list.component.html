@@ -1,0 +1,10 @@
+<h3>Panier :</h3>
+<hr>
+<div class="row">
+  <ul class="col-6 list-group mx-auto">
+    <li *ngFor="let ingredient of ingredients" class="list-group-item">
+      {{ingredient.name}} 
+      <span class="badge badge-default badge-pill float-right">{{ingredient.quantity}}</span>
+    </li>
+  </ul>
+</div>
