@@ -60,7 +60,7 @@ export class CocktailService {
   getCocktail(index: number): Observable<Cocktail>{
     return this.cocktails.pipe(
       filter((cocktails: Cocktail[]) => cocktails !== null ),
-      map( (cocktails: Cocktail[]) =>  Cocktail[index])
+      map( (cocktails: Cocktail[]) =>  cocktails[index])
       );
   }
 
@@ -83,5 +83,10 @@ export class CocktailService {
       const index = cocktails.map(c => c.name).indexOf(editcocktail.name);
       cocktails[index] = editcocktail;
       this.cocktails.next(cocktails);
+      this.save();
+  }
+
+  save():void {
+    this.http.put('https://http-3d11a.firebaseio.com/cocktails.json', this.cocktails.value)
   }
 }

@@ -8,7 +8,6 @@ export class FilterPipe implements PipeTransform {
 
   transform(cocktails: Cocktail[], search: string): Cocktail[] | null {
     if(!search.length){
-      console.log('res');
       return cocktails;
 
     } else {
