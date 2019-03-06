@@ -22,12 +22,14 @@ export class CocktailDetailsComponent implements OnInit {
       (params: Params) => {
       if(params.index) {
         this.index = params.index;
-        this.cocktail = this.cocktailS.getCocktail(params.index);
       } else {
         this.index = 0;
-        this.cocktail = this.cocktailS.getCocktail(0);
       }
+     return this.cocktailS.getCocktail(this.index).subscribe(
+       (cocktail: Cocktail) => { this.cocktail = cocktail }
+     )
     })
+    console.log(this.cocktail )
   }
 
   addIngredient(ingredients: Ingredients[]): void{
