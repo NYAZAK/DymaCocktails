@@ -1,41 +1,36 @@
 // modules
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CocktailModule } from './cocktail-container/cocktail.module';
 
 // Directive
 import { ActiveCocktailDirective } from './shared/directives/active-cocktail.directive';
-
-
 // components
 import { AppComponent } from './app.component';
-import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
 import { SharedModule } from './shared/module/shared.module';
-import { PanierComponent } from './panier/panier.component';
+// import { PanierModule } from './panier/panier.module'; // supprime les reference pour le lazy loading 
+import { PanierService } from './shared/services/panier.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ActiveCocktailDirective,
-    PanierComponent,
-    IngredientsListComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     CocktailModule,
-    SharedModule
+   // PanierModule,
+    SharedModule,
   ],
-  providers: [],
+  providers: [PanierService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
