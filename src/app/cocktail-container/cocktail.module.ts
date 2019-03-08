@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { CocktailRouting } from './cocktail-routing.module';
 
+import { SharedModule } from '../shared/module/shared.module';
 import { CocktailsListComponent } from './cocktails-list/cocktails-list.component';
 import { CocktailDetailsComponent } from './cocktail-details/cocktail-details.component';
 import { CocktailContainerComponent } from './cocktail-container.component';
@@ -21,12 +20,11 @@ import { FilterPipe } from '../shared/pipes/filter.pipe';
     CocktailEditComponent,
     FilterPipe
   ],
-  imports: [
-    CommonModule, 
+  imports: [ 
     FormsModule, 
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule,
+    SharedModule,
     CocktailRouting
   ], 
   providers: [],
